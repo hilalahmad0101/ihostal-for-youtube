@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\BedManager\RoomController;
+use App\Http\Controllers\Admin\BetManager\RoomCategoryController;
 use App\Http\Controllers\Admin\BranchCategoryController;
 use App\Http\Controllers\Admin\BranchController;
+use App\Http\Controllers\Admin\NoticeController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -47,3 +50,32 @@ Route::controller(BranchController::class)->group(function () {
     Route::post('/branch/update/{id}', 'update')->name('admin.branch.update');
 });
 
+Route::controller(NoticeController::class)->group(function () {
+    Route::get('/notice/list', 'index')->name('admin.notice.list');
+    Route::get('/notice/create', 'create')->name('admin.notice.create');
+    Route::post('/notice/store', 'store')->name('admin.notice.store');
+    Route::get('/notice/edit/{id}', 'edit')->name('admin.notice.edit');
+    Route::get('/notice/delete/{id}', 'delete')->name('admin.notice.delete');
+    Route::post('/notice/update/{id}', 'update')->name('admin.notice.update');
+});
+
+
+Route::controller(RoomCategoryController::class)->group(function () {
+    Route::get('/room/category/list', 'index')->name('admin.room_categorys.list');
+    Route::get('/room/category/create', 'create')->name('admin.room_categorys.create');
+    Route::post('/room/category/store', 'store')->name('admin.room_categorys.store');
+    Route::get('/room/category/edit/{id}', 'edit')->name('admin.room_categorys.edit');
+    Route::get('/room/category/delete/{id}', 'delete')->name('admin.room_categorys.delete');
+    Route::post('/room/category/update/{id}', 'update')->name('admin.room_categorys.update');
+});
+
+
+
+Route::controller(RoomController::class)->group(function () {
+    Route::get('/room/list', 'index')->name('admin.room.list');
+    Route::get('/room/create', 'create')->name('admin.room.create');
+    Route::post('/room/store', 'store')->name('admin.room.store');
+    Route::get('/room/edit/{id}', 'edit')->name('admin.room.edit');
+    Route::get('/room/delete/{id}', 'delete')->name('admin.room.delete');
+    Route::post('/room/update/{id}', 'update')->name('admin.room.update');
+});
