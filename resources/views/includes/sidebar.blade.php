@@ -67,9 +67,10 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#bedmanager" aria-expanded="false" aria-controls="bedmanager">
+            <a class="nav-link" data-toggle="collapse" href="#bedmanager" aria-expanded="false"
+                aria-controls="bedmanager">
                 <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
-                <span class="menu-title">Notice</span>
+                <span class="menu-title">Bed Manager</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="bedmanager">
@@ -77,7 +78,7 @@
                     <li class="nav-item"> <a class="nav-link"
                             href="{{ route('admin.room_categorys.list') }}">Category</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('admin.room.list') }}">Room</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ route('admin.notice.create') }}">Bed</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ route('admin.bed.list') }}">Bed</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ route('admin.notice.create') }}">Assign
                             Bed</a></li>
                 </ul>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BedController;
 use App\Http\Controllers\Admin\BedManager\RoomController;
 use App\Http\Controllers\Admin\BetManager\RoomCategoryController;
 use App\Http\Controllers\Admin\BranchCategoryController;
@@ -78,4 +79,14 @@ Route::controller(RoomController::class)->group(function () {
     Route::get('/room/edit/{id}', 'edit')->name('admin.room.edit');
     Route::get('/room/delete/{id}', 'delete')->name('admin.room.delete');
     Route::post('/room/update/{id}', 'update')->name('admin.room.update');
+});
+
+
+Route::controller(BedController::class)->group(function () {
+    Route::get('/bed/list', 'index')->name('admin.bed.list');
+    Route::get('/bed/create', 'create')->name('admin.bed.create');
+    Route::post('/bed/store', 'store')->name('admin.bed.store');
+    Route::get('/bed/edit/{id}', 'edit')->name('admin.bed.edit');
+    Route::get('/bed/delete/{id}', 'delete')->name('admin.bed.delete');
+    Route::post('/bed/update/{id}', 'update')->name('admin.bed.update');
 });
